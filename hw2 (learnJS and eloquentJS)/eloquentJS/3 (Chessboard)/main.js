@@ -1,14 +1,11 @@
-var boardSize = 8;
-var board = "";
-let hashtag = "#";
-let gap = " ";
+let board = "";
 
-for (let y = 0; y <= 8; y++) {
-  for (let x = 0; x <= 8; x++) {
+for (let y = 0; y < 8; y++) {
+  for (let x = 0; x < 8; x++) {
     if ((x + y) % 2 == 0) {
-      board += gap;
+      board += " ";
     } else {
-      board += hashtag;
+      board += "#";
     }
   }
   board += "\n";
