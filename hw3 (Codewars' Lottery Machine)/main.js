@@ -1,10 +1,9 @@
 function lottery(str) {
   let result = "";
-  let count = 0;
+  let count = -1;
   for (let i = 0; i <= str.length; i++) {
     if (isNaN(str[i]) == false && str[i] != result[count]) {
-      let num = str[i];
-      result += num;
+      result += str[i];
       count++;
     }
   }
