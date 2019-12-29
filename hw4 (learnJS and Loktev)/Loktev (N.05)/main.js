@@ -2,7 +2,7 @@ function treeSum(arr) {
   let sum = 0;
   for (let item of arr) {
     if (Array.isArray(item) == true) {
-      return treeSum(item);
+      sum += treeSum(item);
     } else {
       sum += item;
     }
@@ -11,5 +11,3 @@ function treeSum(arr) {
 }
 
 console.log(treeSum([1, 2, [[5, 12, 7], 4], [20, 19], [5, [6, [7, [8]]]]]));
-
-// [5, 7, [4, [2], 8, [1, 3], 2], [9, []], 1, 8]
