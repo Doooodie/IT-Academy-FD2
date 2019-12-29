@@ -1,11 +1,11 @@
 function treeSum(arr) {
   let sum = 0;
-  let str = arr.join("");
-  arr = str.split(",");
-  str = arr.join("");
-  arr = str.split("");
   for (let item of arr) {
-    sum += +item;
+    if (Array.isArray(item) == true) {
+      return treeSum(item);
+    } else {
+      sum += item;
+    }
   }
   return sum;
 }
