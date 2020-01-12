@@ -17,13 +17,16 @@ header > div {
 }
 
 input {
-  color: gray;
   padding-left: 10px;
   width: 400px;
   height: 40px;
   border: solid gainsboro 2px;
   border-radius: 5px;
   font-size: large;
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 input#Search {
