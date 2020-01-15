@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
 }
 
 header {
   background-color: whitesmoke;
   text-align: center;
-
 }
 
 header > div {
@@ -56,26 +55,42 @@ li {
   font-size: larger;
 }
 
-footer {
+footer > div {
   display: flex;
   justify-content: center;
-  margin: 50px;
-  text-align: center;
 }
 
-input#AddButton {
+footer > div:last-of-type {
+  margin: 50px;
+}
+
+button {
   width: 120px;
   height: 46px;
   margin-left: -120px;
   background-color: green;
   border: 0;
   color: white;
+  border-radius: 5px;
+  font-size: large;
 }
 
-li > input {
+li > button {
   width: 60px;
   padding: 0;
   background-color: red;
   border: 0;
   color: white;
+  height: 40px;
+  border-radius: 5px;
+  font-size: large;
+}
+
+#hide {
+  padding: auto;
+  width: auto;
+  height: auto;
+  border: auto;
+  border-radius: auto;
+  font-size: auto;
 }

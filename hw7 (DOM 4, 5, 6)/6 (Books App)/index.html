@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Books App</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -16,26 +16,34 @@
       <ul>
         <li>
           <span>Name of the Wind</span>
-          <input type="button" value="Delete" />
+          <button>Delete</button>
         </li>
         <li>
           <span>The Wise Man&rsquo;s Fear</span>
-          <input type="button" value="Delete" />
+          <button>Delete</button>
         </li>
         <li>
           <span>Kafka on the Shore</span>
-          <input type="button" value="Delete" />
+          <button>Delete</button>
         </li>
         <li>
           <span>The Master and the Margarita</span>
-          <input type="button" value="Delete" />
+          <button>Delete</button>
         </li>
       </ul>
     </div>
 
     <footer>
-      <input id="AddInput" type="text" placeholder="Add a book..." />
-      <input id="AddButton" type="button" value="Add" />
+      <div>
+        <input type="checkbox" id="hide" />
+        <label for="hide">Hide all books</label>
+      </div>
+      <div>
+        <input id="AddInput" type="text" placeholder="Add a book..." />
+        <button>Add</button>
+      </div>
     </footer>
+
+    <script src="main.js"></script>
   </body>
 </html>
