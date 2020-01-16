@@ -28,7 +28,7 @@ input:focus::placeholder {
   color: transparent;
 }
 
-input#Search {
+input#SearchBooks {
   margin-bottom: 40px;
 }
 
@@ -53,6 +53,10 @@ li {
   padding: 20px 0 20px 20px;
   border-left: solid gainsboro 5px;
   font-size: larger;
+}
+
+li.hide {
+  display: none;
 }
 
 footer > div {

@@ -8,7 +8,7 @@
   <body>
     <header>
       <div>Books App</div>
-      <input id="Search" type="text" placeholder="Search books..." />
+      <input id="SearchBooks" type="text" placeholder="Search books..." />
     </header>
 
     <div class="container">
@@ -16,19 +16,19 @@
       <ul>
         <li>
           <span>Name of the Wind</span>
-          <button>Delete</button>
+          <button onclick="parentNode.remove()">Delete</button>
         </li>
         <li>
           <span>The Wise Man&rsquo;s Fear</span>
-          <button>Delete</button>
+          <button onclick="parentNode.remove()">Delete</button>
         </li>
         <li>
           <span>Kafka on the Shore</span>
-          <button>Delete</button>
+          <button onclick="parentNode.remove()">Delete</button>
         </li>
         <li>
           <span>The Master and the Margarita</span>
-          <button>Delete</button>
+          <button onclick="parentNode.remove()">Delete</button>
         </li>
       </ul>
     </div>
@@ -39,8 +39,8 @@
         <label for="hide">Hide all books</label>
       </div>
       <div>
-        <input id="AddInput" type="text" placeholder="Add a book..." />
-        <button>Add</button>
+        <input id="AddBookByName" type="text" placeholder="Add a book..." />
+        <button id="AddBook">Add</button>
       </div>
     </footer>
 
