@@ -34,7 +34,7 @@ searchBooks.oninput = function() {
       if (
         elem.firstElementChild.innerText
           .toLowerCase()
-          .indexOf(searchBooks.value) == -1
+          .indexOf(searchBooks.value.toLowerCase()) == -1
       ) {
         elem.classList.add("hide");
       } else {
