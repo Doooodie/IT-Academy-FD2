@@ -45,9 +45,10 @@ function addButtonClicked() {
       htmlElements.input.style.borderColor = "red";
       alert("Color has been already added");
     } else {
-      addColor(htmlElements.input.value);
-      chooseColor(htmlElements.input.value);
-      setColor(htmlElements.input.value);
+      let value = htmlElements.input.value;
+      addColor(value);
+      chooseColor(value);
+      setColor(value);
       htmlElements.input.style.borderColor = "";
       htmlElements.input.placeholder = "enter new color here";
     }
