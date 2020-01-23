@@ -141,6 +141,7 @@ function removeColor(color) {
       if (htmlElements.selectColor[i].value === color) {
         htmlElements.selectColor.removeChild(htmlElements.selectColor[i]);
         htmlElements.selectColor.selectedIndex = 0;
+        reset();
       }
     }
   } else {
