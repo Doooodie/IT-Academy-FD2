@@ -1,0 +1,29 @@
+div {
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+}
+
+table {
+  user-select: none;
+}
+
+.white td {
+  background: auto;
+}
+
+.black td {
+  background: black;
+}
+
+.highlight {
+  background: black;
+}
+
+td {
+  border: 1px solid;
+  width: 28px;
+  height: 28px;
+}
