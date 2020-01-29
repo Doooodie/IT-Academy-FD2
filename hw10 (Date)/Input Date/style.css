@@ -1,0 +1,18 @@
+input {
+  width: 300px;
+}
+
+@keyframes black-to-red {
+  from, to {
+    color: black;
+  }
+
+  50% {
+    color: red;
+  }
+}
+
+.animation {
+  animation: black-to-red 2s;
+}
+
