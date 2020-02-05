@@ -1,5 +1,3 @@
-let interval = setInterval(onIntervalNextTick, 1000);
-
 const htmlElements = {};
 htmlElements.startBtn = document.querySelector(".container .buttons button.start");
 htmlElements.stopBtn = document.querySelector(".container .buttons button.stop");
@@ -9,16 +7,17 @@ htmlElements.stopwatch = document.querySelector(".container .links .stopwatch");
 htmlElements.timer = document.querySelector(".container .links .timer");
 htmlElements.output = document.querySelector(".container .output");
 
-htmlElements.clock.addEventListener("click", deactivateStopwatch);
-htmlElements.stopwatch.addEventListener("click", activateStopwatch);
-htmlElements.timer.addEventListener("click", deactivateStopwatch);
-
+let interval = setInterval(onIntervalNextTick, 1000);
 function onIntervalNextTick() {
 	currentTime = new Date().toTimeString().split(" ", 1).join();
 	htmlElements.output.innerText = currentTime;
 }
 
 onIntervalNextTick();
+
+htmlElements.clock.addEventListener("click", deactivateStopwatch);
+htmlElements.stopwatch.addEventListener("click", activateStopwatch);
+htmlElements.timer.addEventListener("click", deactivateStopwatch);
 
 function activateElement() {
     htmlElements.clock.classList.remove("selected");
@@ -38,10 +37,12 @@ function deactivateStopwatch() {
 }
 
 function activateStopwatch() {
+	event.stopImmediatePropagation();
     activateElement();
 	htmlElements.output.innerText = "0:00";
-	htmlElements.startBtn.addEventListener("click", startTimer());
-	// htmlElements.stopBtn.addEventListener("click", stopTimer());
+	htmlElements.startBtn.addEventListener("click", startTimer);
+	htmlElements.stopBtn.addEventListener("click", stopTimer);
+	htmlElements.resetBtn.addEventListener("click", resetTimer);
 	htmlElements.startBtn.classList.remove("hidden");
 	htmlElements.stopBtn.classList.remove("hidden");
 	htmlElements.resetBtn.classList.remove("hidden");
@@ -59,4 +60,13 @@ function startTimer() {
 		}
 		htmlElements.output.innerText = `${minutes}:${seconds}`;
 	}
+}
+
+function stopTimer() {
+	clearInterval(interval);
+}
+
+function resetTimer() {
+	stopTimer();
+	htmlElements.output.innerText = "0:00";
 }
