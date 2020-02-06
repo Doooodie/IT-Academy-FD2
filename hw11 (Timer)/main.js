@@ -27,28 +27,36 @@ function activateElement() {
     clearInterval(interval);
 }
 
-function deactivateStopwatch() {
-    activateElement();
-    onIntervalNextTick();
-	interval = setInterval(onIntervalNextTick, 1000);
+function deactivateButtons() {
 	htmlElements.startBtn.classList.add("hidden");
 	htmlElements.stopBtn.classList.add("hidden");
 	htmlElements.resetBtn.classList.add("hidden");
 }
 
-function activateStopwatch() {
-	event.stopImmediatePropagation();
-    activateElement();
-	htmlElements.output.innerText = "0:00";
-	htmlElements.startBtn.addEventListener("click", startTimer);
-	htmlElements.stopBtn.addEventListener("click", stopTimer);
-	htmlElements.resetBtn.addEventListener("click", resetTimer);
+function activateButtons() {
+	htmlElements.startBtn.addEventListener("click", startStopwatch);
+	htmlElements.stopBtn.addEventListener("click", stopStopwatch);
+	htmlElements.resetBtn.addEventListener("click", resetStopwatch);
 	htmlElements.startBtn.classList.remove("hidden");
 	htmlElements.stopBtn.classList.remove("hidden");
 	htmlElements.resetBtn.classList.remove("hidden");
 }
 
-function startTimer() {
+function deactivateStopwatch() {
+    activateElement();
+    onIntervalNextTick();
+	interval = setInterval(onIntervalNextTick, 1000);
+	deactivateButtons();
+}
+
+function activateStopwatch() {
+    activateElement();
+	htmlElements.output.innerText = "0:00";
+	activateButtons();
+}
+
+function startStopwatch() {
+	htmlElements.output.innerText = "0:00";
 	const startTime = new Date().getTime();
 	interval = setInterval(Timer, 1000);
 	function Timer() {
@@ -62,11 +70,11 @@ function startTimer() {
 	}
 }
 
-function stopTimer() {
+function stopStopwatch() {
 	clearInterval(interval);
 }
 
-function resetTimer() {
-	stopTimer();
+function resetStopwatch() {
+	stopStopwatch();
 	htmlElements.output.innerText = "0:00";
 }
