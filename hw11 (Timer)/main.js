@@ -20,11 +20,11 @@ htmlElements.stopwatch.addEventListener("click", activateStopwatch);
 htmlElements.timer.addEventListener("click", deactivateStopwatch);
 
 function activateElement() {
-    htmlElements.clock.classList.remove("selected");
-    htmlElements.stopwatch.classList.remove("selected");
-    htmlElements.timer.classList.remove("selected");
-    event.currentTarget.classList.add("selected");
-    clearInterval(interval);
+	htmlElements.clock.classList.remove("selected");
+	htmlElements.stopwatch.classList.remove("selected");
+	htmlElements.timer.classList.remove("selected");
+	event.currentTarget.classList.add("selected");
+	clearInterval(interval);
 }
 
 function deactivateButtons() {
@@ -43,14 +43,14 @@ function activateButtons() {
 }
 
 function deactivateStopwatch() {
-    activateElement();
-    onIntervalNextTick();
+	activateElement();
+	onIntervalNextTick();
 	interval = setInterval(onIntervalNextTick, 1000);
 	deactivateButtons();
 }
 
 function activateStopwatch() {
-    activateElement();
+	activateElement();
 	htmlElements.output.innerText = "0:00";
 	activateButtons();
 }
