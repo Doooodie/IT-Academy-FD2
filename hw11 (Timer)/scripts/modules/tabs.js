@@ -1,8 +1,4 @@
-import {htmlElements} from "../main.js";
-
-htmlElements.clock = document.querySelector(".container .links .clock");
-htmlElements.stopwatch = document.querySelector(".container .links .stopwatch");
-htmlElements.timer = document.querySelector(".container .links .timer");
+import {htmlElements} from "./htmlElements.js";
 
 class Tabs {
     constructor(clock, stopwatch, timer) {
@@ -20,4 +16,4 @@ class Tabs {
     }
 }
 
-export const tabs = new Tabs(htmlElements.clock, htmlElements.stopwatch, htmlElements.button);
+export const tabs = new Tabs(htmlElements.clock, htmlElements.stopwatch, htmlElements.timer);
