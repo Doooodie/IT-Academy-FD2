@@ -1,4 +1,4 @@
-export const htmlElements = {};
+export let htmlElements = {};
 htmlElements.startBtn = document.querySelector(".container .buttons button.start");
 htmlElements.stopBtn = document.querySelector(".container .buttons button.stop");
 htmlElements.resetBtn = document.querySelector(".container .buttons button.reset");
