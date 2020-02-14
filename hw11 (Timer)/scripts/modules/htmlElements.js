@@ -6,5 +6,6 @@ htmlElements.clock = document.querySelector(".container .links .clock");
 htmlElements.stopwatch = document.querySelector(".container .links .stopwatch");
 htmlElements.timer = document.querySelector(".container .links .timer");
 htmlElements.output = document.querySelector(".container .output");
+htmlElements.links = document.querySelectorAll(".container .links a");
 
 export {htmlElements}

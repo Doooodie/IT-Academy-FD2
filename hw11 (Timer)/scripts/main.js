@@ -1,19 +1,22 @@
 import {htmlElements} from "./modules/htmlElements.js"
-console.log(htmlElements);
-import {tabs} from "./modules/tabs.js"
-console.log(tabs);
 
 let interval = setInterval(onIntervalNextTick, 1000);
 function onIntervalNextTick() {
-	currentTime = new Date().toTimeString().split(" ", 1).join();
+	let currentTime = new Date().toTimeString().split(" ", 1).join();
 	htmlElements.output.innerText = currentTime;
 }
 
 onIntervalNextTick();
 
-htmlElements.clock.addEventListener("click", deactivateStopwatch);
-htmlElements.stopwatch.addEventListener("click", activateStopwatch);
-htmlElements.timer.addEventListener("click", deactivateStopwatch);
+
+
+// tabs.forEach(function() {
+// 	this.addEventListener("click", this.activate);
+// })
+
+// htmlElements.clock.addEventListener("click", deactivateStopwatch);
+// htmlElements.stopwatch.addEventListener("click", activateStopwatch);
+// htmlElements.timer.addEventListener("click", deactivateStopwatch);
 
 function activateElement() {
 	htmlElements.clock.classList.remove("selected");

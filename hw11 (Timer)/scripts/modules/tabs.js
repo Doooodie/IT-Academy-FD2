@@ -8,12 +8,17 @@ class Tabs {
     }
 
     activateTab() {
-        this.forEach(function() {
-            classList.remove("selected");
+        console.log(Tabs.prototype.constructor);
+        htmlElements.links.forEach(function() {
+            this.classList.remove("selected");
         });
         this.classList.add("selected");
-        clearInterval(interval);
+        // clearInterval(interval);
     }
 }
 
-export const tabs = new Tabs(htmlElements.clock, htmlElements.stopwatch, htmlElements.timer);
+export const tabs = new Tabs(htmlElements.clock, htmlElements.stopwatch, htmlElements.timer);\
+
+tabs.activateTab();
+
+tabs.stopwatch.addEventListener("click", tabs.activateTab);
