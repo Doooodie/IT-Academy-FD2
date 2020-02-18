@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Timer</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
     <div class="container">
@@ -14,13 +14,24 @@
         <a data-mode="stopwatch" class="stopwatch" href="#">stopwatch</a>
         <a data-mode="timer" class="timer" href="#">timer</a>
       </div>
-      <div class="output"></div>
-      <div class="buttons">
-        <button class="start hidden">Start</button>
-        <button class="stop hidden">Stop</button>
-        <button class="reset hidden">Reset</button>
+      <div class="tabs">
+        <div data-mode="clock" class="clockTab">
+          <div class="output"></div>
+        </div>
+        <div data-mode="stopwatch" class="stopwatchTab">
+          <div class="output"></div>
+          <div class="buttons">
+            <button class="start hidden">Start</button>
+            <button class="stop hidden">Stop</button>
+            <button class="reset hidden">Reset</button>
+          </div>
+        </div>
+        <div data-mode="timer" class="timerTab">
+          <div class="output"></div>
+        </div>
       </div>
+
     </div>
-    <script src="main.js"></script>
+    <script type="module" src="./scripts/init.js"></script>
   </body>
 </html>
