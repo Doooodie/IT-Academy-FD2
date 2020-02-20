@@ -1,24 +1,38 @@
-import {htmlElements} from "./htmlElements.js";
+import { removeClass, addClass } from "./helper.js";
 
-class Tabs {
-    constructor(clock, stopwatch, timer) {
-        this.clock = clock;
-        this.stopwatch = stopwatch;
-        this.timer = timer;
-    }
+export class Tabs {
+	constructor() {
+		this.htmlElements = {
+			links: document.querySelectorAll(".container .links a"),
+			tabs: document.querySelectorAll(".tabs > div")
+		};
+	}
 
-    activateTab() {
-        console.log(Tabs.prototype.constructor);
-        htmlElements.links.forEach(function() {
-            this.classList.remove("selected");
-        });
-        this.classList.add("selected");
-        // clearInterval(interval);
-    }
+	init() {
+		this.htmlElements.links.forEach(
+			link => link.addEventListener("click", this.linkClicked)
+		);
+	}
+
+	linkClicked() {
+		activateLink(event.target);
+		activateTab(event.target);
+	}
+	
+	activateLink(link) {
+		console.log(link);
+		removeClass("selected", htmlElements.links);
+		link.classList.add("selected");
+	}
+
+	activateTab(elem) {
+		addClass("hidden", htmlElements.tabs);
+	
+		htmlElements.tabs.forEach(function(tab) {
+			if (tab.dataset.mode == elem.dataset.mode) {
+				tab.classList.remove("hidden");
+			}
+		});
+	}
 }
 
-export const tabs = new Tabs(htmlElements.clock, htmlElements.stopwatch, htmlElements.timer);\
-
-tabs.activateTab();
-
-tabs.stopwatch.addEventListener("click", tabs.activateTab);
