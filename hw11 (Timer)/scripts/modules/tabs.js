@@ -8,31 +8,29 @@ export class Tabs {
 		};
 	}
 
-	init() {
-		this.htmlElements.links.forEach(
-			link => link.addEventListener("click", this.linkClicked)
+	init = () => {
+		this.htmlElements.links.forEach(link =>
+			link.addEventListener("click", this.linkClicked)
 		);
-	}
+	};
 
-	linkClicked() {
-		activateLink(event.target);
-		activateTab(event.target);
-	}
-	
-	activateLink(link) {
-		console.log(link);
-		removeClass("selected", htmlElements.links);
+	linkClicked = () => {
+		this.activateLink(event.target);
+		this.activateTab(event.target);
+	};
+
+	activateLink = link => {
+		removeClass("selected", this.htmlElements.links);
 		link.classList.add("selected");
-	}
+	};
 
-	activateTab(elem) {
-		addClass("hidden", htmlElements.tabs);
-	
-		htmlElements.tabs.forEach(function(tab) {
+	activateTab = elem => {
+		addClass("hidden", this.htmlElements.tabs);
+
+		this.htmlElements.tabs.forEach(function(tab) {
 			if (tab.dataset.mode == elem.dataset.mode) {
 				tab.classList.remove("hidden");
 			}
 		});
-	}
+	};
 }
-
