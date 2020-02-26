@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+canvas {
+    font-family: "Press Start 2P";
+    background: #f7f7f7;
+    display: block;
+    margin: auto;
+}
