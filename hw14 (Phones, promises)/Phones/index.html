@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	</head>
+
+	<body>
+		<button onclick="loadPhones()" id="button">Загрузить phones.json!</button>
+
+		<script>
+			function loadPhones() {
+				var xhr = new XMLHttpRequest();
+
+				xhr.open("GET", "phones.json", true);
+
+				xhr.onreadystatechange = function() {
+					if (xhr.readyState != 4) return;
+					button.innerHTML = "Готово!";
+
+					if (xhr.status != 200) {
+						// обработать ошибку
+						alert(xhr.status + ": " + xhr.statusText);
+					} else {
+						// вывести результат
+						const responseObj = JSON.parse(xhr.response);
+						const ul = document.createElement("ul");
+						button.after(ul);
+
+						responseObj.forEach(function(phone) {
+							const li = document.createElement("li");
+							li.innerText = phone.name;
+							ul.append(li);
+						});
+					}
+				};
+
+				xhr.send();
+
+				button.innerHTML = "Загружаю...";
+				button.disabled = true;
+			}
+		</script>
+	</body>
+</html>
