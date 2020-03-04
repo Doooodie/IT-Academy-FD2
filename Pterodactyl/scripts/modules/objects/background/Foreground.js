@@ -6,4 +6,4 @@ class Foreground extends Background {
 	}
 }
 
-export let foreground = new Foreground(1, 52, 1000, 12, 0, 135);
+export let foreground = new Foreground(1, 52, 1200, 12, 0, 135);

@@ -1,3 +1,11 @@
-import { img, draw } from "./modules/helper.js";
+import { canvas } from "./modules/canvas.js";
+import { drawGame, pteroFlitter } from "./modules/draw.js";
+import { objects } from "./modules/objects/Objects.js";
 
-img.onload = draw;
+function init() {
+    canvas.draw();
+    drawGame();
+    setInterval(pteroFlitter, 200);
+}
+
+objects.img.onload = init;

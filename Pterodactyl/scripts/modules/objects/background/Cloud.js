@@ -6,4 +6,4 @@ class Cloud extends Background {
 	}
 }
 
-export let cloud = new Cloud(83, 1, 46, 13, 300, 20);
+export let cloud = new Cloud(83, 1, 46, 13, 500, 20);

@@ -6,4 +6,4 @@ class Sun extends Background {
 	}
 }
 
-export let sun = new Sun(537, 1, 38, 40, 20, 1);
+export let sun = new Sun(537, 1, 38, 40, 400, 5);
