@@ -12,7 +12,7 @@ class Canvas {
 	}
 
 	transform() {
-		let windowHeight = window.innerHeight;
+		const windowHeight = window.innerHeight;
 		let scaleHeight = windowHeight / this.cvs.height;
 		let scaleWidth = window.innerWidth / this.cvs.width;
 		let scale = Math.max(1, Math.min(scaleHeight, scaleWidth));
@@ -22,4 +22,4 @@ class Canvas {
 	}
 }
 
-export const canvas = new Canvas();
+export default new Canvas();

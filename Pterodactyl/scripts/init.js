@@ -1,11 +1,13 @@
-import { canvas } from "./modules/canvas.js";
-import { drawGame, pteroFlitter } from "./modules/draw.js";
-import { objects } from "./modules/objects/Objects.js";
+import drawGame from "./modules/drawGame.js";
+import canvas from "./modules/Canvas.js";
+import { ptero } from "./modules/objects/ObjectConstructor.js";
+
+document.addEventListener("keydown", () => ptero.fly());
 
 function init() {
-    canvas.draw();
-    drawGame();
-    setInterval(pteroFlitter, 200);
+	canvas.draw();
+	drawGame();
+	setInterval(() => ptero.flitter(), 200);
 }
 
-objects.img.onload = init;
+ptero.img.onload = init;
