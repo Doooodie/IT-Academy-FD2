@@ -29,8 +29,10 @@ class ObjectConstructor {
 class Ptero extends ObjectConstructor {
 	constructor(sx, sy, width, height, dx, dy) {
 		super(sx, sy, width, height, dx, dy);
-		this.sound = new Audio();
-		this.sound.src = "./assets/sounds/button-press.mp3";
+		this.flySound = new Audio();
+		this.flySound.src = "./assets/sounds/button-press.mp3";
+		this.deadSound = new Audio();
+		this.deadSound.src = "./assets/sounds/hit.mp3";
 	}
 
 	flitter() {
@@ -46,11 +48,19 @@ class Ptero extends ObjectConstructor {
 	}
 
 	fly() {
-		this.sound.play();
+		this.flySound.play();
 		if (this.dy === 50) {
 			this.dy += 50;
 		} else {
 			this.dy -= 50;
+		}
+	}
+
+	isCrashed(obj) {
+		if (this.dx == obj.dx && this.dy == obj.dy) {
+			return true;
+        } else {
+			return false;
 		}
 	}
 }
@@ -61,6 +71,8 @@ class Score {
 		this.ctx = ctx;
 		this.amount = 0;
 		this.ctx.font = "14px 'Press Start 2P'";
+		this.sound = new Audio();
+		this.sound.src = "./assets/sounds/score-reached.mp3";
 	}
 
 	draw() {
