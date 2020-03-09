@@ -5,7 +5,7 @@ class Ptero extends ObjectConstructor {
 		super(sx, sy, width, height, dx, dy);
 		this.speed = 2;
 		this.distance = 0;
-		this.flitterCount = 0;
+		this.immortal = true;
 		this.flySound = new Audio();
 		this.deadSound = new Audio();
 		this.flySound.src = "./assets/sounds/button-press.mp3";
@@ -30,22 +30,24 @@ class Ptero extends ObjectConstructor {
 		} else if (keyup && this.dy > 50) {
 			this.dy -= 2;
 		} else if (keyleft && this.dx > 10) {
-			this.dx -= 2;
+			this.dx -= 3;
 		} else if (keyright && this.dx < 550) {
 			this.dx += 2;
 		}
 	}
 
 	isCrashed(obj) {
-		if (
-			this.dx + this.width - 50 > obj.dx &&
-			this.dx < obj.dx + obj.width &&
-			this.dy + this.height - 50 > obj.dy &&
-			this.dy < obj.dy + obj.height
-		) {
-			return true;
-		} else {
-			return false;
+		if (!this.immortal) {
+			if (
+				this.dx + this.width - 20 > obj.dx &&
+				this.dx < obj.dx + obj.width &&
+				this.dy + this.height > obj.dy &&
+				this.dy < obj.dy + obj.height - 20
+			) {
+				return true;
+			} else {
+				return false;
+			}
 		}
 	}
 }

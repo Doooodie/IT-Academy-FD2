@@ -26,10 +26,9 @@ class ObjectConstructor {
 		);
 }
 
-const smallCactus = new ObjectConstructor(274, 1, 51, 35, 400, 100);
-const bigCactus = new ObjectConstructor(425, 1, 51, 50, 400, 100);
+const cactus = new ObjectConstructor(274, 1, 51, 35, 600, 114);
 const cloud = new ObjectConstructor(83, 1, 46, 13, 500, 20);
 const sun = new ObjectConstructor(537, 1, 40, 40, 400, 5);
 const foreground = new ObjectConstructor(1, 52, 1200, 12, 0, 135);
 
-export { ObjectConstructor, smallCactus, bigCactus, cloud, sun, foreground };
+export { ObjectConstructor, cactus, cloud, sun, foreground };
