@@ -2,7 +2,7 @@ import canvas from "./Canvas.js";
 import objects from "./objects/Objects.js";
 import ptero from "./objects/instances/Ptero.js";
 
-let flittering = setInterval(() => ptero.flitter(), 200);
+let flapping = setInterval(() => ptero.flap(), 200);
 let downPressed,
 	upPressed,
 	leftPressed,
@@ -15,10 +15,8 @@ document.addEventListener("keydown", event => {
 	} else if (event.key == "ArrowUp") {
 		upPressed = true;
 	} else if (event.key == "ArrowLeft") {
-		clearInterval(flittering);
-		ptero.sx = 130;
-		ptero.height = 30;
-		ptero.dHeight = ptero.height;
+		clearInterval(flapping);
+		ptero.hover();
 		leftPressed = true;
 	} else if (event.key == "ArrowRight") {
 		rightPressed = true;
@@ -31,7 +29,7 @@ document.addEventListener("keyup", event => {
 	} else if (event.key == "ArrowUp") {
 		upPressed = false;
 	} else if (event.key == "ArrowLeft") {
-		flittering = setInterval(() => ptero.flitter(), 200);
+		flapping = setInterval(() => ptero.flap(), 200);
 		leftPressed = false;
 	} else if (event.key == "ArrowRight") {
 		rightPressed = false;

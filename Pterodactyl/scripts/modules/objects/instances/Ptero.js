@@ -5,22 +5,26 @@ class Ptero extends ObjectConstructor {
 		super(sx, sy, width, height, dx, dy);
 		this.speed = 2;
 		this.distance = 0;
-		this.immortal = true;
+		this.immortal = false;
 		this.flySound = new Audio();
 		this.deadSound = new Audio();
 		this.flySound.src = "./assets/sounds/button-press.mp3";
 		this.deadSound.src = "./assets/sounds/hit.mp3";
 	}
 
-	flitter() {
+	hover() {
+		this.sx = 130;
+		this.height = 30;
+		this.dHeight = this.height;
+	}
+
+	flap() {
 		if (this.sx == 130) {
 			this.sx = 176;
 			this.height = 34;
 			this.dHeight = this.height;
 		} else {
-			this.sx = 130;
-			this.height = 30;
-			this.dHeight = this.height;
+			this.hover();
 		}
 	}
 

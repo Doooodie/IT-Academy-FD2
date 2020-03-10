@@ -1,5 +1,6 @@
 import { ObjectConstructor, cactus } from "../ObjectConstructor.js";
 import { Dino, dino } from "./Dino.js";
+import score from "./Score.js";
 import ptero from "./Ptero.js";
 import canvas from "../../Canvas.js";
 
@@ -50,6 +51,7 @@ class Obstacles {
 			}
 
 			if (ptero.isCrashed(obj) == true) {
+				localStorage.setItem("amount", score.highScore);
 				ptero.deadSound.play();
 				ptero.flySound = null;
 				canvas.cvs = null;
@@ -60,7 +62,7 @@ class Obstacles {
 	draw() {
 		this.initObstacle(this.dinos);
 
-		if (ptero.distance > 100) {
+		if (ptero.distance > 1000) {
 			this.initObstacle(this.cactuses);
 		}
 	}
