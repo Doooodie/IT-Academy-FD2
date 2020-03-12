@@ -6,3 +6,10 @@ canvas {
 	margin: auto;
 	margin-top: 5%;
 }
+
+div {
+	display: flex;
+	justify-content: center;
+	font: 100px "Press Start 2P";
+	text-align: center;
+}

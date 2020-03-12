@@ -1,8 +1,8 @@
 import { ObjectConstructor, cactus } from "../ObjectConstructor.js";
 import { Dino, dino } from "./Dino.js";
-import score from "./Score.js";
-import ptero from "./Ptero.js";
+import gameState from "../GameState.js";
 import canvas from "../../Canvas.js";
+import ptero from "./Ptero.js";
 
 class Obstacles {
 	constructor() {
@@ -51,10 +51,7 @@ class Obstacles {
 			}
 
 			if (ptero.isCrashed(obj) == true) {
-				localStorage.setItem("amount", score.highScore);
-				ptero.deadSound.play();
-				ptero.flySound = null;
-				canvas.cvs = null;
+				gameState.stop(canvas.ctx);
 			}
 		});
 	}
