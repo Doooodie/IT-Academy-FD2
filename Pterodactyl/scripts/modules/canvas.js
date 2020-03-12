@@ -18,7 +18,7 @@ class Canvas {
 		let scale = Math.max(1, Math.min(scaleHeight, scaleWidth));
 		let scaledCanvasHeight = this.cvs.height * scale;
 		let translateY = Math.ceil(Math.max(0, (windowHeight - scaledCanvasHeight - 35) * 0.1)) * window.devicePixelRatio;
-		this.cvs.style.transform = 'scale(' + scale + ') translateY(' + translateY + 'px)';
+		this.cvs.style.transform = "scale(" + scale + ") translateY(" + translateY + "px)";
 	}
 }
 

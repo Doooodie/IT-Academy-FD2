@@ -1,7 +1,7 @@
-import { flapping, startMoving, stopMoving, continueAnimating } from "../drawGame.js";
-import { ObjectConstructor } from "./ObjectConstructor.js";
-import score from "./instances/Score.js";
-import ptero from "./instances/Ptero.js";
+import { flapping, startMoving, stopMoving, continueAnimating } from "../../drawGame.js";
+import { ObjectConstructor } from "../ObjectConstructor.js";
+import score from "./Score.js";
+import ptero from "../entities/Ptero.js";
 
 class GameState {
 	constructor() {
@@ -15,15 +15,15 @@ class GameState {
 		this.restartButton.draw(ctx);
 		this.gameOverText.draw(ctx);
 		document.removeEventListener("keydown", startMoving);
-        document.removeEventListener("keyup", stopMoving);
-        continueAnimating.boolean = false;
+		document.removeEventListener("keyup", stopMoving);
+		continueAnimating.boolean = false;
 		clearInterval(flapping);
 
 		document.addEventListener("keyup", event => {
-            if (event.code == "Space") {
-                location.reload();
-            }
-        });
+			if (event.code == "Space") {
+				location.reload();
+			}
+		});
 	}
 }
 

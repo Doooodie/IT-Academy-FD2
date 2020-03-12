@@ -1,7 +1,7 @@
 import { sun } from "./ObjectConstructor.js";
-import Background from "./instances/Background.js";
-import Obstacles from "./instances/Obstacles.js";
-import ptero from "./instances/Ptero.js";
+import Background from "./entities/Background.js";
+import Obstacles from "./entities/Obstacles.js";
+import ptero from "./entities/Ptero.js";
 
 class Objects {
 	constructor() {

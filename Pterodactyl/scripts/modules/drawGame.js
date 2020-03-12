@@ -1,6 +1,6 @@
 import canvas from "./Canvas.js";
 import objects from "./objects/Objects.js";
-import ptero from "./objects/instances/Ptero.js";
+import ptero from "./objects/entities/Ptero.js";
 
 let continueAnimating = {boolean: true};
 let flapping = setInterval(() => ptero.flap(), 200);

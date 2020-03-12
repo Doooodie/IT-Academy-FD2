@@ -1,6 +1,6 @@
 import { ObjectConstructor, cloud, foreground } from "../ObjectConstructor.js";
 import canvas from "../../Canvas.js";
-import score from "./Score.js";
+import score from "../instances/Score.js";
 import ptero from "./Ptero.js";
 
 class Background {

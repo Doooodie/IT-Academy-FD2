@@ -4,7 +4,6 @@ class Dino extends ObjectConstructor {
 	constructor(sx, sy, width, height, dx, dy) {
 		super(sx, sy, width, height, dx, dy);
 		this.jumpCount = 0;
-		this.jumpCount = 0;
 	}
 
 	jump() {

@@ -1,6 +1,6 @@
 import { ObjectConstructor, cactus } from "../ObjectConstructor.js";
 import { Dino, dino } from "./Dino.js";
-import gameState from "../GameState.js";
+import gameState from "../instances/GameState.js";
 import canvas from "../../Canvas.js";
 import ptero from "./Ptero.js";
 
